@@ -1,0 +1,180 @@
+/* 
+-----------  General Styles  --------------
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-bgc-color: hsl(233, 47%, 7%);
+    --card-bgc-color: hsl(244, 38%, 16%);
+    --soft-voilet-color: hsl(277, 64%, 61%);
+    --white-color: hsl(0, 0%, 100%);
+    --main-para-color: hsla(0, 0%, 100%, 0.75);
+    --slight-trans-white-color:hsla(0, 0%, 100%, 0.6);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: var(--main-bgc-color);
+    color:var(--slight-trans-white-color);
+}
+
+img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+h1{
+    font-size: 1.9rem;
+    color:var(--white-color);
+}
+/* 
+-----------  Main Styles  --------------
+*/
+
+main{
+    min-width: 700px;
+    background-color: var(--card-bgc-color);
+    border-radius: 5px;
+}
+article{
+    width: 100%;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 480px 480px;
+}
+.hero-section{
+    width: 100%;
+    height: auto;
+}
+.hero-section img{
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+} 
+
+.text-section{
+    height: 100%;
+    padding:60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.text-section h1 span{
+    color: var(--soft-voilet-color);
+}
+.achievements{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.achievements div :first-child{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.achievements div :last-child{
+    text-transform: uppercase;
+}
+.fd-col{
+    display: flex;
+    flex-direction: column;
+
+}
+/* 
+-----------  Footer Styles  --------------
+*/
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* 
+-----------  Media Queries  --------------
+*/
+
+@media screen and (max-width:1120px){
+    article{
+        grid-template-columns: 350px 350px;
+    }
+    .text-section{
+        padding: 35px;
+    }
+}
+
+@media screen and (max-width:760px){
+    main{
+        min-width: 480px;
+    }
+    article{
+        grid-template-columns: 240px 240px;
+    }
+    .text-section{
+        padding: 20px;
+    }
+    .achievements{
+        flex-direction: column;
+        gap:10px;
+    }
+    .text-section h1{
+        font-size: 1.3rem;
+    }
+    .text-section p{
+        font-size: .8rem;
+    }
+    .achievements div :first-child{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    main{
+        min-width: 300px;
+        margin: 40px;
+    }
+    .hero-section img{
+        border-radius: 5px 5px 0 0;
+    }
+    article{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .text-section{
+        margin: 35px;
+    }
+    .text-section h1{
+        font-size: 1.6rem;
+    }
+    .text-section p{
+        font-size: .9rem;
+    }
+    .achievements{
+        flex-direction: column;
+        gap:20px;
+    }
+    .achievements div :first-child{
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
